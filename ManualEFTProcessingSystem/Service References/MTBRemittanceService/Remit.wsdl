@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AccountEnquiry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="partyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="beneficiaryName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountEnquiryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountEnquiryResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PartyAccountAvailableBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="partyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PartyAccountAvailableBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartyAccountAvailableBalanceResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Payment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msgtype" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="partyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="benfcryAccountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="benfcryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senderName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senderPhoneNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senderAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senderCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="branchId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="paymentDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="transferCurrency" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="benfcryinfo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgToBenfcry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgSource" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BEFTNPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="partyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="benfcryAccountNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="benfcryAccountType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="benfcryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="benfcryBankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="benfcryBranchName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="routingNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="benfcryAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senderName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senderAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transferCurrency" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BEFTNPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BEFTNPaymentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OTCPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="partyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senderName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senderPhoneNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senderAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="benfcryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="benfcryAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="benfcryMobileno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OTCPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OTCPaymentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StatusEnquiry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msgtype" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="partyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StatusEnquiryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StatusEnquiryResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MobileWalletBeneficiaryValidationRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="partyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msisdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fullName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MobileWalletBeneficiaryValidationRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MobileWalletBeneficiaryValidationRequestResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MobileWalletBeneficiaryValidationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="partyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ValidationResponseCallingReferanceNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MobileWalletBeneficiaryValidationResponseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MobileWalletBeneficiaryValidationResponseResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MobileWalletPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="partyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConversationID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginateCountry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginateCurrency" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiverMSISDN" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SendingAmount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="ForexRate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecevingAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderFirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderLastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderMSISDN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDOB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderPOB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocumentType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderDocumentNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderIDIssueDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderIDExpiryDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderNationality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderkycPurpose" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderkycSourceOfFunds" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderLocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentInstrumentType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentInstrumentEntity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentInstrumentNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentInstrumentCity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentInstrumentZipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentInstrumentMisscellExpiry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentInstrumentpayonDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentInstrumentMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MobileWalletPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MobileWalletPaymentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Reconciliation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="msgtype" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="partyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reqType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="todate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReconciliationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReconciliationResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AccountEnquirySoapIn">
+    <wsdl:part name="parameters" element="tns:AccountEnquiry" />
+  </wsdl:message>
+  <wsdl:message name="AccountEnquirySoapOut">
+    <wsdl:part name="parameters" element="tns:AccountEnquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="PartyAccountAvailableBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:PartyAccountAvailableBalance" />
+  </wsdl:message>
+  <wsdl:message name="PartyAccountAvailableBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:PartyAccountAvailableBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="PaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:Payment" />
+  </wsdl:message>
+  <wsdl:message name="PaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:PaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="BEFTNPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:BEFTNPayment" />
+  </wsdl:message>
+  <wsdl:message name="BEFTNPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:BEFTNPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="OTCPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:OTCPayment" />
+  </wsdl:message>
+  <wsdl:message name="OTCPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:OTCPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="StatusEnquirySoapIn">
+    <wsdl:part name="parameters" element="tns:StatusEnquiry" />
+  </wsdl:message>
+  <wsdl:message name="StatusEnquirySoapOut">
+    <wsdl:part name="parameters" element="tns:StatusEnquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="MobileWalletBeneficiaryValidationRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:MobileWalletBeneficiaryValidationRequest" />
+  </wsdl:message>
+  <wsdl:message name="MobileWalletBeneficiaryValidationRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:MobileWalletBeneficiaryValidationRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="MobileWalletBeneficiaryValidationResponseSoapIn">
+    <wsdl:part name="parameters" element="tns:MobileWalletBeneficiaryValidationResponse" />
+  </wsdl:message>
+  <wsdl:message name="MobileWalletBeneficiaryValidationResponseSoapOut">
+    <wsdl:part name="parameters" element="tns:MobileWalletBeneficiaryValidationResponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="MobileWalletPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:MobileWalletPayment" />
+  </wsdl:message>
+  <wsdl:message name="MobileWalletPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:MobileWalletPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReconciliationSoapIn">
+    <wsdl:part name="parameters" element="tns:Reconciliation" />
+  </wsdl:message>
+  <wsdl:message name="ReconciliationSoapOut">
+    <wsdl:part name="parameters" element="tns:ReconciliationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RemitServiceSoap">
+    <wsdl:operation name="AccountEnquiry">
+      <wsdl:input message="tns:AccountEnquirySoapIn" />
+      <wsdl:output message="tns:AccountEnquirySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PartyAccountAvailableBalance">
+      <wsdl:input message="tns:PartyAccountAvailableBalanceSoapIn" />
+      <wsdl:output message="tns:PartyAccountAvailableBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Payment">
+      <wsdl:input message="tns:PaymentSoapIn" />
+      <wsdl:output message="tns:PaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BEFTNPayment">
+      <wsdl:input message="tns:BEFTNPaymentSoapIn" />
+      <wsdl:output message="tns:BEFTNPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OTCPayment">
+      <wsdl:input message="tns:OTCPaymentSoapIn" />
+      <wsdl:output message="tns:OTCPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StatusEnquiry">
+      <wsdl:input message="tns:StatusEnquirySoapIn" />
+      <wsdl:output message="tns:StatusEnquirySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MobileWalletBeneficiaryValidationRequest">
+      <wsdl:input message="tns:MobileWalletBeneficiaryValidationRequestSoapIn" />
+      <wsdl:output message="tns:MobileWalletBeneficiaryValidationRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MobileWalletBeneficiaryValidationResponse">
+      <wsdl:input message="tns:MobileWalletBeneficiaryValidationResponseSoapIn" />
+      <wsdl:output message="tns:MobileWalletBeneficiaryValidationResponseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MobileWalletPayment">
+      <wsdl:input message="tns:MobileWalletPaymentSoapIn" />
+      <wsdl:output message="tns:MobileWalletPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reconciliation">
+      <wsdl:input message="tns:ReconciliationSoapIn" />
+      <wsdl:output message="tns:ReconciliationSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RemitServiceSoap" type="tns:RemitServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AccountEnquiry">
+      <soap:operation soapAction="http://tempuri.org/AccountEnquiry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartyAccountAvailableBalance">
+      <soap:operation soapAction="http://tempuri.org/PartyAccountAvailableBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Payment">
+      <soap:operation soapAction="http://tempuri.org/Payment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BEFTNPayment">
+      <soap:operation soapAction="http://tempuri.org/BEFTNPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTCPayment">
+      <soap:operation soapAction="http://tempuri.org/OTCPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusEnquiry">
+      <soap:operation soapAction="http://tempuri.org/StatusEnquiry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileWalletBeneficiaryValidationRequest">
+      <soap:operation soapAction="http://tempuri.org/MobileWalletBeneficiaryValidationRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileWalletBeneficiaryValidationResponse">
+      <soap:operation soapAction="http://tempuri.org/MobileWalletBeneficiaryValidationResponse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileWalletPayment">
+      <soap:operation soapAction="http://tempuri.org/MobileWalletPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reconciliation">
+      <soap:operation soapAction="http://tempuri.org/Reconciliation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RemitServiceSoap12" type="tns:RemitServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AccountEnquiry">
+      <soap12:operation soapAction="http://tempuri.org/AccountEnquiry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartyAccountAvailableBalance">
+      <soap12:operation soapAction="http://tempuri.org/PartyAccountAvailableBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Payment">
+      <soap12:operation soapAction="http://tempuri.org/Payment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BEFTNPayment">
+      <soap12:operation soapAction="http://tempuri.org/BEFTNPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OTCPayment">
+      <soap12:operation soapAction="http://tempuri.org/OTCPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatusEnquiry">
+      <soap12:operation soapAction="http://tempuri.org/StatusEnquiry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileWalletBeneficiaryValidationRequest">
+      <soap12:operation soapAction="http://tempuri.org/MobileWalletBeneficiaryValidationRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileWalletBeneficiaryValidationResponse">
+      <soap12:operation soapAction="http://tempuri.org/MobileWalletBeneficiaryValidationResponse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileWalletPayment">
+      <soap12:operation soapAction="http://tempuri.org/MobileWalletPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reconciliation">
+      <soap12:operation soapAction="http://tempuri.org/Reconciliation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RemitService">
+    <wsdl:port name="RemitServiceSoap" binding="tns:RemitServiceSoap">
+      <soap:address location="https://api.mutualtrustbank.com/Remit.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RemitServiceSoap12" binding="tns:RemitServiceSoap12">
+      <soap12:address location="https://api.mutualtrustbank.com/Remit.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
